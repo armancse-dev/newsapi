@@ -1,16 +1,16 @@
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
+
 const News = (props) => {
    const {title, description, author, urlToImage, url, publishedAt, content} = props.news;
    return (
       <Col>
          <Card>
-         <Card.Img variant="top" src="holder.js/100px160" />
+         <Card.Img variant="top" src={urlToImage} />
          <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>{title}</Card.Title>
             <Card.Text>
-               This is a longer card with supporting text below as a natural
-               lead-in to additional content. This content is a little bit longer.
+               {description}
             </Card.Text>
          </Card.Body>
          </Card>

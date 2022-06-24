@@ -4,6 +4,8 @@ import { Button, Spinner, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import News from './components/News/News';
+// const c= [];
+// const number = c.length ===0 ? 5: 10;
 
 function App() {
   const [news, setNews] = useState([]);
@@ -16,11 +18,15 @@ function App() {
   return (
  
     <div className="App">
-      <Row xs={1} md={2} className="g-4">
+
+      { news.length === 0 ? 
+        <Spinner animation="border" />
+      : 
+        <Row xs={1} md={4} className="g-4">
         {
           news.map(nw => <News news={nw}></News>)
         }
-      </Row>
+      </Row>}
     </div>
   );
 }

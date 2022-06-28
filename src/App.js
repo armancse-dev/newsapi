@@ -10,7 +10,7 @@ import News from './components/News/News';
 function App() {
   const [news, setNews] = useState([]);
   useEffect(() =>{
-    fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-05-24&sortBy=publishedAt&apiKey=37b47d819f7048deabe7280236759725')
+    fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-05-28&sortBy=publishedAt&apiKey=37b47d819f7048deabe7280236759725')
     .then(res => res.json())
     .then(data => setNews(data.articles))
 
@@ -27,6 +27,9 @@ function App() {
           news.map(nw => <News news={nw}></News>)
         }
       </Row>}
+
+
+      
     </div>
   );
 }
